@@ -1,0 +1,269 @@
+---
+title: "lista1"
+author: "Natalia"
+date: "2022-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercicio 1
+
+Execute as seguintes expressões no R mostrando os resultados obtidos.
+1 + 1
+100:130
+5 - +1
+3 % 5
+2 * 3
+4 - 1
+6 / (4 - 1)
+
+```{r cars}
+1 + 1
+```
+```{r}
+100:130
+```
+```{r}
+5 - +1
+```
+```{r error=TRUE}
+3 % 5
+```
+```{r}
+4 - 1
+```
+```{r}
+6 / (4 - 1)
+```
+
+## Exercicio 2
+
+Utilize uma expressão para cada item.
+a) Escolha um número e some 3 a ele.
+b) Multiplique o resultado por 2.
+c) Subtraia 10 da resposta.
+d) Divida o que foi obtido por 4.
+
+```{r}
+i<- 2
+a<- i+3
+a
+b<- a*2
+b
+c<- b-10
+c
+d<- c/4
+d
+```
+## Exercicio 3
+
+Calcule $\sqrt{16}$, $16^{0.5^{3}}$ e $4^{3/2}$.
+
+```{r}
+sqrt(16)
+```
+```{r}
+(16)^(0.5^3)
+```
+```{r}
+ 4^(3/2)
+
+```
+## Exercicio 4
+
+Teste as expressões $log10(1000)$, $log(1000)$, $exp(log(1000))$. Depois teste a expressão $log2(64)$. Verifique se você entendeu as diferentes funções logarítmicas.
+
+```{r}
+log(1000)
+#logaritmo na base e -> log natural -> log(1000)
+```
+
+```{r}
+log10(1000)
+#logaritmo na base 10 -> log10(1000)
+
+```
+
+```{r}
+exp(log(1000))
+#exponencial do log natural de 1000 -> igual ao proprio 1000
+
+```
+
+```{r}
+log2(64)
+#log de 64 na base 2, ou seja: 2^6=64
+```
+## Exercicio 5
+
+Defina as variáveis abaixo tomando cuidados ao nomear as variáveis, conforme visto em sala de aula. Mostre os valores para as seguintes constantes:
+
+```{r}
+knitr::include_graphics("exercicio5.png")
+```
+
+
+```{r }
+v_luz <- 2.998 * 10^8
+sprintf("velocidade da luz: %s", v_luz)
+
+Q_e <- 1.602*10^(-19)
+sprintf("Carga elementar ou eletrônica: %s", Q_e )
+
+P_vacuo <- 8.85*10^(-12)
+sprintf("Permissividade do vácuo:%s", P_vacuo) 
+
+cons_planck <- 6.626*10^(-34)
+sprintf("Constante de Planck: %s", cons_planck )
+
+
+cons_boltz <-5.67*10^(-8)
+sprintf("Constante de Stefan Boltzman: %s", cons_boltz )
+
+cons_solar <- 1380
+sprintf("Constante solar: %s", cons_solar )
+
+cons_avo <- 6.022*10^23
+sprintf("Constante de Avogadro: %s", cons_avo )
+
+cosn_arsec <- 287.04
+sprintf("Constante dos gases para o ar seco: %s", cosn_arsec)
+
+cosn_gases_ide <- 461.5
+sprintf("Constante dos gases ideais para o vapor: %s", cosn_gases_ide)
+
+dens_CNTP <- 1.2754
+sprintf("Densidade do ar seco para CNTP (à 0 ° C em 1000 mb): %s", dens_CNTP)
+
+p_nivel_mar <- 1013.25
+sprintf("Pressão média ao nível médio do mar para atmosfera padrão: %s", p_nivel_mar)
+
+temp_nivel_mar <- 288.15
+sprintf("Temperatura ao nível médio do mar para atmosfera padrão: %s", temp_nivel_mar)
+
+calor_late_vap <- 2.501*10^6
+sprintf("Calor latente de vaporização ou condensação (à 0 °C): %s",calor_late_vap)
+
+calor_late_fusao <- 0.334*10^6
+sprintf("Calor latente de fusão (à 0 °C): %s",calor_late_fusao)
+
+m_mol_agua <- 18.016
+sprintf("Massa molecular da água: %s",m_mol_agua)
+
+p_mol_ar <- 28.96
+sprintf("Peso molecular do ar: %s",p_mol_ar)
+
+r_terra <- 6.37*10^6
+sprintf("Raio da terra: %s",r_terra)
+
+v_ang_terra <- 7.29*10^(-5)
+sprintf("Velocidade angular da Terra: %s",v_ang_terra)
+```
+
+## Exercicio 6
+
+a) Como você pode fazer para que a constante $pi$ seja mostrada com 20 dígitos?
+```{r}
+sprintf("pi: %#.20f", pi )
+```
+
+b) Como voltar a trabalhar a com 7 dígitos novamente?
+
+```{r}
+sprintf("pi: %#.7f", pi )
+```
+
+c) Mostre o número neperiano com 7 dígitos.
+```{r}
+e <- exp(1)
+sprintf("neperiano: %#.7f", e)
+```
+## Exercicio 7
+
+Determine a temperatura de bulbo úmido ($T_{w}$) usando a expressão empírica (Stull, 2011) abaixo. Salve os resultados em variáveis diferentes. Determine a ($T_{w}$) para temperatura do ar $T = 20°C$ e Umidade relativa $UR = 70 \%$. Defina variáveis para os valores de $T$ e $UR$ solicitados e substitua-os na equação de $T_{w}$.Não é necessária a conversão dos dados expressos em % para aplicação na equação.
+
+```{r}
+knitr::include_graphics("exercicio7.png")
+```
+
+
+```{r}
+T_ar <- 20
+UR <- 70
+
+a = atan(0.151977*(UR+8.313659)^(1/2))
+b = atan(T+UR)
+c = atan(UR-1.676331)
+d = 0.00391838 *(UR^(3/2))*atan(0.023101*UR)
+
+T_w = T_ar*a+b-c+d-4.686035
+
+sprintf("temperatura de bulbo úmido Tw: %#.4f", T_w)
+```
+## Exercicio 8
+
+Determine os valores de umidade do solo:
+
+utilizando o conjunto de equações de pedotransferência abaixo (Tomasela et al. 2003):
+
+```{r}
+knitr::include_graphics("exercicio8.png")
+```
+
+
+```{r}
+#Conjunto de equações de pedotransferência e variaveis:
+SI <-16.29
+CL <-49.25
+Db <-1.25
+Me <- 25
+
+x14 <- (-1.05501+0.0650857*SI)
+x15 <- (-2.07588+0.0423954*CL)
+x16 <- (-6.03402 + 4.80572*Db)
+x17 <- (-2.18409+8.84963*(Me/100))
+z9 <- (0.175202 + 1.18513*x17-0.0996042*(x17^2)+0.327915*x16-0.0758657*(x16^2))
+z10 <- (0.929344*z9+0.132519*x14)
+
+z11 <- (0.191452+1.25652*x17-0.079098*(x17^2)+0.393814*x16+0.152095*x17*x16)
+
+z13 <- (0.235084+0.33033*x15-0.191838*(x15^2)+0.0543679*(x15^3)+0.977685*x17+0.304174*x15*x17
+-0.218857*(x17^2)-0.164373*x15*(x17^2)+0.0415057*(x17^3)+0.373361*x16+0.0811861*x17*x16-0.0768087*x15*x17*x16)
+```
+
+
+a) no potencial hídrico de 10kPa ($\theta_{10kPa}$)
+
+```{r}
+theta_10k = 0.339255+0.112526*z10
+sprintf("potencial hídrico de 10kPa: %#.4f", theta_10k)
+```
+
+b) na capacidade de campo ($\theta_{33kPa}$)
+```{r}
+theta_33k = 0.28951+0.103815*z11
+sprintf("capacidade de campo 33kPa: %#.4f", theta_33k)
+```
+
+c) no ponto de murcha permanente ($\theta_{1500kPa}$)
+```{r}
+theta_1500k = 0.214008+0.0862945*z13
+sprintf(" ponto de murcha permanente 1500kPa: %#.4f", theta_1500k)
+```
+
+## Exercicio 9 
+Arredonde para 2 casas decimais os resultados da questão 8. Dica ver ?round.
+
+```{r}
+theta_10k_2 <- round(theta_10k, digits = 2) 
+theta_33k_2 <- round(theta_33k, digits = 2) 
+theta_1500k_2 <- round(theta_1500k, digits = 2) 
+
+sprintf("potencial hídrico de 10kPa: %s",theta_10k_2)
+sprintf("capacidade de campo 33kPa: %s", theta_33k_2)
+sprintf(" ponto de murcha permanente 1500kPa: %s", theta_1500k_2)
+```
+
