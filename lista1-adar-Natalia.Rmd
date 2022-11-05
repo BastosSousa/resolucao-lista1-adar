@@ -42,10 +42,11 @@ Execute as seguintes expressões no R mostrando os resultados obtidos.
 ## Exercicio 2
 
 Utilize uma expressão para cada item.
-a) Escolha um número e some 3 a ele.
-b) Multiplique o resultado por 2.
-c) Subtraia 10 da resposta.
-d) Divida o que foi obtido por 4.
+
+a. Escolha um número e some 3 a ele.
+b. Multiplique o resultado por 2.
+c. Subtraia 10 da resposta.
+d. Divida o que foi obtido por 4.
 
 ```{r}
 i<- 2
@@ -101,9 +102,41 @@ log2(64)
 
 Defina as variáveis abaixo tomando cuidados ao nomear as variáveis, conforme visto em sala de aula. Mostre os valores para as seguintes constantes:
 
-```{r}
-knitr::include_graphics("exercicio5.png")
-```
+a. Velocidade da luz: $\nu = 2.998 \times 10^{8} \left[m \, s^{-1}\right]$
+
+b. Carga elementar ou eletrônica: $e = 1.602 \times 10^{-19} \left[C\right]$
+
+c. Permissividade do vácuo: $\epsilon_{0} = 8.85 \times 10^{-12} \left[C^{2} \, N^{-1} \, m^{2}\right]$
+
+d. Constante de Planck: $h=6.626 \times 10^{-34} \left[J \, s\right]$
+
+e. Constante de Stefan Boltzman: $\sigma = 5.67 \times 10^{-8} \left[W \, m^{-2} \, K^{-4}\right]$
+
+f. Constante solar: $S_{0} = 1380 \left[W \, m^{-2}\right]$
+
+g. Constante de Avogadro: $N_{A} = 6.022 \times 10^{23} \left[mol^{-1}\right]$
+
+h. Constante dos gases para o ar seco: $R_{d} = 287.04 \left[J \, K^{-1} \, kg^{-1}\right]$
+
+i. Constante dos gases ideais para o vapor: $R_{w} = 461.5 \left[J \, K^{-1} \, kg^{-1}\right]$
+
+j. Densidade do ar seco para CNTP (à 0 ° C em 1000 mb): $\rho=1.2754 \left[kg \, m^{-3}\right]$
+
+k. Pressão média ao nível médio do mar para atmosfera padrão:$P_{0}=1013.25 \left[mb\right]$
+
+l. Temperatura ao nível médio do mar para atmosfera padrão: $T_{0}=288.15 \left[K\right]$
+
+m. Calor latente de vaporização ou condensação (à 0 °C): $\lambda_{v} = 2.501 \times 10^{6}\left[J \, kg^{-1}\right]$
+
+n. Calor latente de fusão (à 0 °C): $\lambda_{f} = 0.334 \times 10^{6}\left[J \, kg^{-1}\right]$
+
+o. Massa molecular da água: $M_w = 18.016 \left[g \, mol^{-1}\right]$
+
+p. Peso molecular do ar: $M_{ar} = 28.96 \left[g \, mol^{-1}\right]$
+
+q. Raio da terra: $r = 6.37 \times 10^{6} \left[m\right]$
+
+r. Velocidade angular da Terra: $\Omega=7.29 \times 10^{-5} \left[rad \, s^{-1}\right]$
 
 
 ```{r }
@@ -165,7 +198,7 @@ sprintf("Velocidade angular da Terra: %s",v_ang_terra)
 
 ## Exercicio 6
 
-a) Como você pode fazer para que a constante $pi$ seja mostrada com 20 dígitos?
+a. Como você pode fazer para que a constante $pi$ seja mostrada com 20 dígitos?
 ```{r}
 sprintf("pi: %#.20f", pi )
 ```
@@ -185,9 +218,13 @@ sprintf("neperiano: %#.7f", e)
 
 Determine a temperatura de bulbo úmido ($T_{w}$) usando a expressão empírica (Stull, 2011) abaixo. Salve os resultados em variáveis diferentes. Determine a ($T_{w}$) para temperatura do ar $T = 20°C$ e Umidade relativa $UR = 70 \%$. Defina variáveis para os valores de $T$ e $UR$ solicitados e substitua-os na equação de $T_{w}$.Não é necessária a conversão dos dados expressos em % para aplicação na equação.
 
-```{r}
-knitr::include_graphics("exercicio7.png")
-```
+\begin{aligned} 
+T_{w}=T\cdot atan\left [ 0.151977\cdot \left ( UR+8.313659 \right )^{1/2} \right ]+ \\
+atan\left (T+UR \right )-\\
+atan\left ( UR-1.676331 \right )+\\
+0.00391838\left ( UR \right )^{3/2}\cdot atan\left ( 0.023101\cdot UR \right )-\\
+4.686035
+\end{aligned}
 
 
 ```{r}
@@ -206,6 +243,12 @@ sprintf("temperatura de bulbo úmido Tw: %#.4f", T_w)
 ## Exercicio 8
 
 Determine os valores de umidade do solo:
+
+utilizando o conjunto de equações de pedotransferência abaixo (Tomasela et al. 2003):
+
+* no potencial hídrico de 10kPa ($\theta_{10kPa}$)
+* na capacidade de campo ($\theta_{33kPa}$)
+* no ponto de murcha permanente ($\theta_{1500kPa}$)
 
 utilizando o conjunto de equações de pedotransferência abaixo (Tomasela et al. 2003):
 
